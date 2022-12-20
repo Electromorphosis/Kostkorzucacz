@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<title>Our Funky HTML Page</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+</head>
+<body>
+    <img src=https://gryplanszowe.pl/pol_pl_Kostka-do-gry-plastik-ekstra-biala-100-szt-730_3.jpg alt="Game cube" width="500" height="500">   
+<p>
+<button onclick="getResult()">Rzuć kostką!</button></p>
+<p>
+    Aktualny rzut: <p id="wynik"></p>
+    Wynik zsumowany: <p id="suma"></p>
+    Cel: <p id="cel"></p>
+</p>
+
+
+<script>
+
+    var wynik = 0;
+    var suma = 0;
+    var cel = 10
+
+function getRandomInt() {
+  min = Math.ceil(1);
+  max = Math.floor(6);
+  return Math.floor(Math.random() * (max - min) + min); 
+}
+document.getElementById("cel").innerHTML = cel;
+
+function getResult() {
+wynik = getRandomInt();
+document.getElementById("wynik").innerHTML = wynik;
+suma += wynik; 
+if (suma == cel) suma++;
+document.getElementById("suma").innerHTML = suma;
+
+}
+
+    </script>
+</body>
+</html>
